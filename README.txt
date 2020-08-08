@@ -16,9 +16,8 @@ the main notebook is the sparkly project where we do all the preprocessing, feat
 Results
 Three different models were trained with the dataset provided:  Random Forest, Support Vector Machines and Gradient Boosted Trees. 
 Their performance was compared using the F1 metric score 
-The final metrics for our Gradient Boosted Trees Classifier are as follows:
-The F-1 Score is
-The accuracy is 
+The best result was obtained for the Random forest Classifier:
+The F-1 Score is 0.7391304347826086
+The accuracy is 0.6618993135011442
 
-Check out my blog post by clicking this link for more detailed analysis.
 
