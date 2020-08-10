@@ -22,3 +22,6 @@ The best result was obtained for the Random forest Classifier:
 The F-1 Score is 0.7391304347826086
 The accuracy is 0.6618993135011442
 
+The blog post for this project can be found here: https://www.blogger.com/blog/post/edit/8632551251090685809/7586831341330096298
+
+
