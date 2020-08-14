@@ -1,7 +1,6 @@
 # Sparkify-capstone-Udacity-project
 Project for Udacity nanodegree program
 Libraries required for the project:
-
 Python
 Pandas
 Matplotlib
@@ -9,8 +8,35 @@ Seaborn
 PySpark
 Spark
 
+Imported libraries:
+from pyspark.sql.functions import udf
+from pyspark.sql.types import StringType
+from pyspark.sql.types import IntegerType
+from pyspark.sql.functions import desc
+from pyspark.sql.functions import asc
+from pyspark.sql.functions import sum as Fsum
+import pyspark.sql.functions as F
+from pyspark.sql.functions import avg, col, concat, desc, explode, lit, min, max, split, udf, count, when, isnull, collect_list
+from pyspark.sql import Window
+import pandas as pd
+import numpy as np
+from matplotlib import pyplot as plt
+%matplotlib inline
+from pyspark.sql import functions as sF
+from pyspark.sql import types as sT
+import seaborn as sns
+from functools import reduce
+
 Project Motivation
-This project is part of the Udacity Data Scientist Nanodegree program. The aim is to evaluate user activity for an app called Sparkify  and to predict user churn. Sparkify is a similar app to Spotify. The dataset provided includes a user activity log for the past few months. It contains  information about the users and the specific actions they have taken, which lead to various entries for the user. The cancelation action can be used to know when the user has logged on. 
+The aim of the project was to learn how to manipulate large and datasets with Spark MLlib as part of the Udacity “Data Scientist Nanodegree” capstone project, to understand why customers churn and identify those who will churn. Our task is to develop a model that predicts which users are at risk to churn either by downgrading from premium or by cancelling their service, the business can offer them incentives and discounts potentially saving millions in revenues.
+We will use the F1 score metric to measure the efficiency of the models, which is useful for balancing precision and recall. This would be the solution approach:
+1.	Initial Data Exploration: we used the spark environment for the analysis and we need to create a spark session to start the data exploration
+2.	Churn definition: We analyze the page column to define the users who churn. These are the ones that have a cancelation event for a given user ID.
+3.	Exploratory Data Analysis: We explore the distribution of churn and non-churn users
+4.	Feature Engineering: We select the features for the analysis and modeling
+5.	Machine Learning Models: Before running our models, we vectorize (VectorAssembler) and then standardize (StandardScaler) our feature set and then split (randomSplit) the data into train and test sets. For our prediction exercise, we implemented three models and then evaluated all of them on Accuracy and F1 Score.
+6.	Hyper Parameter Tuning: used ParamGridbuilder to tune hyper-parameters
+7.	Model Performance Evaluation and Results
 
 Files Description
 the main notebook is the sparkly project where we do all the preprocessing, feature engineering and modelling.
@@ -23,5 +49,9 @@ The F-1 Score is 0.7391304347826086
 The accuracy is 0.6618993135011442
 
 The blog post for this project can be found here: https://www.blogger.com/blog/post/edit/8632551251090685809/7586831341330096298
+The code can be found at Sparkify.ipynb
+
+References
+Dataset provided by Udacity.
 
 
