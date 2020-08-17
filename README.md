@@ -8,7 +8,7 @@ Seaborn
 PySpark
 Spark
 
-Imported libraries:
+Used libraries:
 from pyspark.sql.functions import udf
 from pyspark.sql.types import StringType
 from pyspark.sql.types import IntegerType
@@ -27,8 +27,16 @@ from pyspark.sql import types as sT
 import seaborn as sns
 from functools import reduce
 
+from pyspark.ml.feature import Normalizer, StandardScaler, VectorAssembler
+from pyspark.ml.classification import LinearSVC, NaiveBayes,RandomForestClassifier, DecisionTreeClassifier, GBTClassifier
+from pyspark.ml.evaluation import MulticlassClassificationEvaluator
+from pyspark.ml.tuning import CrossValidator, ParamGridBuilder
+from pyspark.ml.feature import StopWordsRemover, StringIndexer, VectorAssembler
+from pyspark.ml.evaluation import BinaryClassificationEvaluator
+
 Project Motivation
 The aim of the project was to learn how to manipulate large and datasets with Spark MLlib as part of the Udacity “Data Scientist Nanodegree” capstone project, to understand why customers churn and identify those who will churn. Our task is to develop a model that predicts which users are at risk to churn either by downgrading from premium or by cancelling their service, the business can offer them incentives and discounts potentially saving millions in revenues.
+
 We will use the F1 score metric to measure the efficiency of the models, which is useful for balancing precision and recall. This would be the solution approach:
 1.	Initial Data Exploration: we used the spark environment for the analysis and we need to create a spark session to start the data exploration
 2.	Churn definition: We analyze the page column to define the users who churn. These are the ones that have a cancelation event for a given user ID.
@@ -49,9 +57,11 @@ The F-1 Score is 0.7391304347826086
 The accuracy is 0.6618993135011442
 
 The blog post for this project can be found here: https://www.blogger.com/blog/post/edit/8632551251090685809/7586831341330096298
-The code can be found at Sparkify.ipynb
+The code can be found at Sparkify_20200817.ipynb
 
 References
-Dataset provided by Udacity.
+Dataset provided by Udacity (www.udacity.com)
+https://spark.apache.org/docs/2.1.1/
+
 
 
